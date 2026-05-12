@@ -41,8 +41,8 @@ jobs:
         run: npx cap sync android
         working-directory: ./frontend
 
-      - name: Build APK
-        run: ./gradlew assembleDebug --no-daemon
+      - name: Build APK with error output
+        run: ./gradlew assembleDebug --no-daemon 2>&1 | tail -100
         working-directory: ./frontend/android
 
       - name: Upload APK
