@@ -33,6 +33,9 @@ jobs:
         run: npm run build
         working-directory: ./frontend
 
+      - name: Install Capacitor CLI globally
+        run: npm install -g @capacitor/cli
+
       - name: Add Android platform
         run: npx cap add android
         working-directory: ./frontend
