@@ -3,7 +3,6 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import path from "path"
 
-// https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
@@ -19,5 +18,8 @@ export default defineConfig({
       '/anthropic': { target: 'http://localhost:7860', changeOrigin: true, timeout: 0 },
       '/v1beta':    { target: 'http://localhost:7860', changeOrigin: true, timeout: 0 },
     }
+  },
+  build: {
+    outDir: 'dist',
   }
 })
